@@ -133,3 +133,11 @@ export const foundationCard = [
     status: "In Stock",
   },
 ];
+export const links = [
+    "FAQ",
+    "Shipping",
+    "Return & Refund Policy",
+    "Privacy Policy",
+    "Virtual Styling Experience",
+    "Contact Us",
+  ];
