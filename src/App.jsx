@@ -8,13 +8,13 @@ import { ParallaxProvider } from "react-scroll-parallax";
 const App = () => {
   return (
     <ParallaxProvider>
-      <Nav />
-
-      <Routes>
-        <Route path="/home" element={<Home />} />
-      </Routes>
-
-      <Footer />
+      <div>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
+      </div>
     </ParallaxProvider>
   );
 };

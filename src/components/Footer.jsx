@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="bg-white absolute inset-0 w-full h-full"></div>
       <div className="relative p-6 sm:p-10 md:p-16 lg:p-20 flex flex-col md:flex-row justify-between gap-8">
         
-        {/* Left side */}
+        {/* Left side - Socials */}
         <div className="text-center md:text-left md:w-1/2">
           <div className="font-text text-neutral-500 text-base sm:text-lg md:text-xl">
             <p className="text-shadow-lg">Wanna be first and join Limnia?</p>
@@ -17,7 +17,7 @@ const Footer = () => {
 
           <ul className="text-neutral-500 lg:mt-6 text-shadow-lg space-y-2">
             {["Facebook", "Instagram", "Pinterest"].map((social, i) => (
-              <li key={i}>
+              <li key={i} className="inline-block mr-4 md:block md:mr-0">
                 <motion.a
                   href="#"
                   className="relative inline-block"
@@ -27,7 +27,7 @@ const Footer = () => {
                 >
                   {social}
                   <motion.span
-                    className="absolute right-0 bottom-0 h-[2px] bg-neutral-500"
+                    className="absolute left-0 bottom-0 h-[2px] bg-neutral-500"
                     variants={{
                       rest: { width: 0 },
                       hover: { width: "100%" },
@@ -40,7 +40,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Right side */}
+        {/* Right side - Page links */}
         <div className="text-center md:text-right text-sm text-shadow-lg text-neutral-500">
           <ul className="text-center md:text-start mb-4 space-y-2">
             {links.map((link, i) => (

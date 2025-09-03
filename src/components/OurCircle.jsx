@@ -29,7 +29,7 @@ const OurCircle = () => {
           </h1>
 
           <button className="flex items-center justify-start duration-300 text-white px-6 py-3 text-sm sm:text-base rounded-md font-bold font-text">
-            Join The Inner Circle <BsArrowRight className="ml-2 w-5 h-5" />
+            Join The Inner Circle <BsArrowRight className="ml-2 w-5" />
           </button>
         </div>
 

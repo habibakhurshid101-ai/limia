@@ -10,17 +10,12 @@
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
   }
 }
+body {
+  overflow-x: hidden;
+}
+
 
 .font-text {
   font-family: "Merriweather", serif;
 }
-/* src/index.css ya App.css me add karo */
-/* src/index.css ya App.css me add karo */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
 
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE 10+ */
-  scrollbar-width: none; /* Firefox */
-}

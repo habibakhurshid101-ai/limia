@@ -4,16 +4,22 @@ import { HiMenu, HiX } from "react-icons/hi";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className=" w-full z-50 bg-transparent">
-      <div   className="nav-background w-full bg-cover bg-center">
-        <div className="flex justify-between items-center px-8 py-5">
+    <nav className="absolute w-full z-50 bg-transparent overflow-x-hidden">
+      <div className="nav-background w-full bg-cover bg-center">
+        <div
+          className="flex justify-between items-center 
+          px-4 sm:px-8 
+          pt-4 sm:pt-6 md:pt-8 
+          pb-3"
+        >
           {/* Logo */}
           <div>
-            <img src="/logo.png" alt="logo" className="w-28 h-8" />
+            <img src="/logo.png" alt="logo" className="w-24 sm:w-28 h-auto" />
           </div>
 
-          {/* Desktop Links */}
+          {/* Desktop Menu Left */}
           <div className="hidden md:flex">
             <ul className="flex space-x-6 font-medium text-white">
               <li>
@@ -34,7 +40,7 @@ const Header = () => {
             </ul>
           </div>
 
-          {/* Right Side (Desktop) */}
+          {/* Desktop Menu Right */}
           <div className="hidden md:flex">
             <ul className="flex space-x-6 items-center text-white">
               <li className="text-xl">
@@ -57,7 +63,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <div
-            className="md:hidden text-white text-2xl cursor-pointer"
+            className="md:hidden text-white text-3xl cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <HiX /> : <HiMenu />}
@@ -65,42 +71,46 @@ const Header = () => {
         </div>
 
         {/* Mobile Dropdown */}
-        {isOpen && (
-          <div className="absolute top-full left-0 w-full bg-black/90 text-white md:hidden">
-            <ul className="flex flex-col space-y-4 p-6 text-center">
-              <li>
-                <a href="/shop" className="hover:text-gray-200">
-                  Shop
-                </a>
-              </li>
-              <li>
-                <a href="/our-story" className="hover:text-gray-200">
-                  Our Story
-                </a>
-              </li>
-              <li>
-                <a href="/the-loop" className="hover:text-gray-200">
-                  The Loop
-                </a>
-              </li>
-              <li className="flex justify-center items-center space-x-2">
-                <a href="/search" className="flex items-center space-x-2">
-                  <GrFormSearch /> <span>Search</span>
-                </a>
-              </li>
-              <li>
-                <a href="/cart" className="hover:text-gray-200">
-                  Cart 0
-                </a>
-              </li>
-              <li>
-                <a href="/login" className="hover:text-gray-200">
-                  Login
-                </a>
-              </li>
-            </ul>
-          </div>
-        )}
+        <div
+          className={`md:hidden absolute top-full left-0 w-full bg-black/90 text-white transition-all duration-300 ease-in-out ${
+            isOpen
+              ? "max-h-screen opacity-100"
+              : "max-h-0 opacity-0 overflow-hidden"
+          }`}
+        >
+          <ul className="flex flex-col space-y-4 p-6 text-center">
+            <li>
+              <a href="/shop" className="hover:text-gray-200">
+                Shop
+              </a>
+            </li>
+            <li>
+              <a href="/our-story" className="hover:text-gray-200">
+                Our Story
+              </a>
+            </li>
+            <li>
+              <a href="/the-loop" className="hover:text-gray-200">
+                The Loop
+              </a>
+            </li>
+            <li className="flex justify-center items-center space-x-2">
+              <a href="/search" className="flex items-center space-x-2">
+                <GrFormSearch /> <span>Search</span>
+              </a>
+            </li>
+            <li>
+              <a href="/cart" className="hover:text-gray-200">
+                Cart 0
+              </a>
+            </li>
+            <li>
+              <a href="/login" className="hover:text-gray-200">
+                Login
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );

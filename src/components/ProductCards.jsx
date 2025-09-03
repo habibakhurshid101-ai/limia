@@ -23,10 +23,10 @@ const ProductCard = ({ product }) => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center">
-      {/* Card (Only Image) */}
+    <div className="flex-shrink-0 w-44 sm:w-52 md:w-64 lg:w-72 p-2 sm:p-3 flex flex-col items-center">
+      {/* Card (Image Slideshow) */}
       <div
-        className="bg-white relative z-10 w-[300px] h-[320px] mx-auto"
+        className="bg-white relative z-10 w-full h-48 sm:h-56 md:h-64 lg:h-72"
         onMouseEnter={startSlideshow}
         onMouseLeave={stopSlideshow}
       >
@@ -37,10 +37,10 @@ const ProductCard = ({ product }) => {
         />
       </div>
 
-      {/* Text outside card */}
-      <div className="flex justify-between items-center gap-4 w-[300px] mt-2">
-        <h3 className="font-medium text-sm truncate">{product.name}</h3>
-        <p className="text-xs text-gray-500">{product.status}</p>
+      {/* Text below card */}
+      <div className="flex justify-between w-full mt-3 text-xs sm:text-sm md:text-base px-1">
+        <h3 className="font-medium truncate">{product.name}</h3>
+        <p className="text-gray-500">{product.status}</p>
       </div>
     </div>
   );
@@ -50,7 +50,7 @@ const ProductCards = () => {
   return (
     <div className="relative min-h-screen bg-gray-100 z-10">
       <div className="p-5 md:p-20 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-12 lg:gap-14 justify-items-center">
           {shopProduct.map((product, index) => (
             <ProductCard product={product} key={index} />
           ))}
